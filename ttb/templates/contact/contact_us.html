@@ -1,0 +1,95 @@
+{% extends "partial/main.html" %}
+{% load static %}
+{% block body %}
+<!-- success.html -->
+
+<!-- rts bread crumba rea start -->
+<div class="rts-breadcrumb-area bg_image">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="baread-crumb-main-wrapper pt--100">
+                    <div class="inner">
+                        <span class="works">Get In Touch</span>
+                        <h1 class="title rts_hero__title">Contact Now</h1>
+                        <span class="bg-text">Contact Now</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- rts bread crumba rea end -->
+
+<!-- appoinment area two start -->
+<div class="appoinmnet-area-two rts-section-gap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="appoinment-area-two plr--120 plr_md--40 plr_sm--30">
+                    <div class="title-area-appoinment">
+                        <span class="pre">Appointment</span>
+                        <h2 class="title mb--0">
+                            Love to hear from you <br>
+                            <span>Get in touch!</span>
+                        </h2>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <form method="POST" action="{% url 'contact_us' %}" class="appoinment-h2 rts-slide-up-gsap">
+                        {% csrf_token %}
+                        <div class="input-line">
+                            <div class="input-half">
+                                <label for="full_name">Your Name*</label>
+                                <input id="full_name" type="text" name="full_name" placeholder="Andrew Davis Kino...." value="{{ form.full_name.value }}" required>
+                            </div>
+                            <div class="input-half">
+                                <label for="email">Your Email*</label>
+                                <input id="email" type="email" name="email" placeholder="info@mighty.net" value="{{ form.email.value }}" required>
+                            </div>
+                        </div>
+                        <div class="input-line mt--40">
+                            <div class="input-half">
+                                <label for="interest">What you are interested*</label>
+                                <select name="interest" id="interest" class="form-select" required>
+                                    <option value="Design & Branding" {% if form.interest.value == 'Design & Branding' %}selected{% endif %}>Design & Branding</option>
+                                    <option value="Web Development" {% if form.interest.value == 'Web Development' %}selected{% endif %}>Web Development</option>
+                                    <option value="SEO" {% if form.interest.value == 'SEO' %}selected{% endif %}>SEO</option>
+                                    <option value="Marketing" {% if form.interest.value == 'Marketing' %}selected{% endif %}>Marketing</option>
+                                </select>
+                            </div>
+                            <div class="input-half">
+                                <label for="budget">Project Budget*</label>
+                                <select name="budget" id="budget" class="form-select" required>
+                                    <option value="Low" {% if form.budget.value == 'Low' %}selected{% endif %}>Low</option>
+                                    <option value="Medium" {% if form.budget.value == 'Medium' %}selected{% endif %}>Medium</option>
+                                    <option value="High" {% if form.budget.value == 'High' %}selected{% endif %}>High</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="text-area mt--40">
+                            <label for="message">Message*</label>
+                            <textarea id="message" name="message" cols="30" rows="10" placeholder="Let us know about your project" required>{{ form.message.value }}</textarea>
+                        </div>
+                        <button class="submit-pd" type="submit">Submit</button>
+                    </form>
+                    <!-- Contact Form End -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- appoinment area two end -->
+
+<!-- Optional: Success Message -->
+{% if messages %}
+    <div class="alert alert-success">
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+{% endif %}
+
+
+
+{% endblock body%}

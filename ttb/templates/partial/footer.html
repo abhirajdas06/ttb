@@ -1,153 +1,138 @@
 {% load static %}
-    <!-- Scripts style two -->
-    <!-- rts footer two area start -->
-    <div class="rts-footer-two-area bg-footer-2 bg_image-1">
-        <div class="container-140">
-            <div class="row">
-                <div class="col-lg-12 pt--130 pt_sm--60 pb--100 pb_sm--60">
-                    <div class="footer-two-wrapper-content">
-                        <!-- footer left start -->
-                        <div class="footer-left-two">
-                            <a href="index.html" class="logo">
-                                <img src="{% static "assets/images/logo/ttb.svg" %}" alt="logo">
-                            </a>
-                            <p class="disc">
-                                Teor facilis porta maurs ligula vivamus <br> nullam laoreet pharetra posuere.
-                            </p>
-                            <div class="rts-social-area-one">
-                                <ul>
-                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-skype"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- footer left end -->
-
-                        <!-- footer right area start -->
-                        <div class="footer-right-two">
-                            <!-- contact info -->
-                            <div class="contact-information">
-                                <h5 class="title">Contact Info</h5>
-                                <a href="#" class="map">Maxuel Street, Frankfurt <br> 2589 Germany.</a>
-                                <a href="#" class="mail">information.mighty.com</a>
-                                <a href="tel:28586235932159" class="number">+2858 62359 32159</a>
-                            </div>
-                            <!-- contact info end -->
-                            <!-- contact info -->
-                            <div class="contact-information input">
-                                <h5 class="title">Subscribe Newsletter</h5>
-                                <p class="map">Subscribe our newsletter for future updates. don’t <br> worry we don’t spam your email address</p>
-                                <form action="#" class="form-footer-2">
-                                    <label for="email-1"><i class="fa-regular fa-envelope"></i></label>
-                                    <input id="email-1" type="email" placeholder="Enter your email..." required>
-                                    <button type="submit">Subscribe</button>
-                                </form>
-                            </div>
-                            <!-- contact info end -->
-                        </div>
-                        <!-- footer right area end -->
+<!-- rts footer two area start -->
+<div class="rts-footer-two-area bg-footer-2 bg_image-1">
+    <div class="container-140">
+        <div class="row">
+            <!-- Column 1 - Logo and Description -->
+            <div class="col-lg-4 col-md-12 pt--130 pt_sm--60 pb--100 pb_sm--60">
+                <div class="footer-left-two">
+                    <a href="index.html" class="logo">
+                        <img src="{% static 'assets/images/logo/ttb.svg' %}" alt="logo"style="
+                        max-width: 250px;
+                    "><br>
+                    <br>
+                    </a>
+                    <p class="disc">
+                        The Tech Buzz is your digital growth partner, <br>
+                        offering innovative marketing and technology <br>
+                        solutions. We specialize in helping businesses <br>
+                        thrive in the digital world with tailored services <br>
+                        in digital marketing, software, and more.
+                    </p>
+                    <div class="rts-social-area-one">
+                        <ul>
+                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-skype"></i></a></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-lg-12">
-                    <!-- copyright-area-start -->
-                    <div class="copy-right-area-start-two">
-                        <p class="left">2023 © Mighty. All rights reserved.</p>
+            </div>
+
+            <!-- Column 2 - Quick Links -->
+            <div class="col-lg-4 col-md-12 pt--130 pt_sm--60 pb--100 pb_sm--60">
+                <div class="footer-right-two">
+                    <!-- Quick Links -->
+                    <div class="contact-information">
+                        <h5 class="title">Quick Link</h5>
+                        <ul>
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li><a href="{% url 'about' %}">About Us</a></li>
+                            <li><a href="{% url 'service' %}">Services</a></li>
+                            <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+                        </ul>
                     </div>
-                    <!-- copyright-area-end -->
+                </div>
+            </div>
+
+            <!-- Column 3 - Our Services -->
+            <div class="col-lg-4 col-md-12 pt--130 pt_sm--60 pb--100 pb_sm--60">
+                <div class="footer-right-two">
+                    <!-- Our Services -->
+                    <div class="contact-information input">
+                        <h5 class="title">Our Services</h5>
+                        <ul>
+                            <li><a href="{% url 'digital_marketing' %}">Digital Marketing</a></li>
+                            <li><a href="{% url 'website_development' %}">Website Development</a></li>
+                            <li><a href="{% url 'software_development' %}">Software Development</a></li>
+                            <li><a href="{% url 'app_development' %}">App Development</a></li>
+                            <li><a href="{% url 'email_marketing' %}">Email Marketing</a></li>
+                            <li><a href="{% url 'whatsapp_marketing' %}">WhatsApp Marketing</a></li>
+                            <li><a href="{% url 'ivr_marketing' %}">IVR Marketing</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="col-lg-12">
+                <div class="copy-right-area-start-two">
+                    <p class="left">2023 © Mighty. All rights reserved.</p>
                 </div>
             </div>
         </div>
     </div>
-    <!-- rts footer two area end -->
+</div>
+<!-- rts footer two area end -->
 
-    <!-- Scripts style two End -->
+<!-- Scripts and other footer content -->
+<div class="loading-screen" id="loading-screen">
+    <span class="bar top-bar"></span>
+    <span class="bar down-bar"></span>
+    <span class="progress-line"></span>
+    <span class="loading-counter"> </span>
+</div>
 
-    <!-- Scripts style two -->
-    <div class="loading-screen" id="loading-screen">
-        <span class="bar top-bar"></span>
-        <span class="bar down-bar"></span>
-        <span class="progress-line"></span>
-        <span class="loading-counter"> </span>
-    </div>
+<div class="bg-noise"></div>
 
+<!-- Back to top -->
+<div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+    </svg>
+</div>
 
-    <div class="bg-noise"></div>
-
-
-    <!-- back to top start -->
-    <div class="progress-wrap">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
-        </svg>
-    </div>
-    <!-- back to top end -->
-
-
-
-    <!-- pre loader start -->
-    <div class="rts-cursor cursor-outer" data-default="yes" data-link="yes" data-slider="no">
-        <span class="fn-cursor"></span>
-    </div>
-    <div class="rts-cursor cursor-inner" data-default="yes" data-link="yes" data-slider="no">
-        <span class="fn-cursor">
+<!-- Pre Loader -->
+<div class="rts-cursor cursor-outer" data-default="yes" data-link="yes" data-slider="no">
+    <span class="fn-cursor"></span>
+</div>
+<div class="rts-cursor cursor-inner" data-default="yes" data-link="yes" data-slider="no">
+    <span class="fn-cursor">
         <span class="fn-left"></span>
         <span class="fn-right"></span>
-        </span>
-    </div>
-    <!-- pre loader end -->
+    </span>
+</div>
 
+<!-- Scripts -->
+<script defer src="{% static 'assets/js/vendor/jquery.min.js' %}"></script>
+<script defer src="{% static 'assets/js/plugins/bootstrap.min.js' %}"></script>
+<script defer src="{% static 'assets/js/plugins/contact.form.js' %}"></script>
+<script defer src="{% static 'assets/js/vendor/waypoint.js' %}"></script>
+<script defer src="{% static 'assets/js/plugins/swiper.js' %}"></script>
 
-{% comment %} 
-    <!-- dark light switcher start-->
-    <div class="modal-sidebar-scroll rts-dark-light">
-        <ul>
-            <li class="go-dark-w"><span>Dark</span><i class="rts-go-dark fal fa-moon"></i></li>
-            <li class="go-light-w"><span>Light</span><i class="rts-go-light fa-light fa-brightness"></i></li>
-        </ul>
-    </div>
-    <!-- dark light switcher end --> {% endcomment %}
+<!-- For Side Bar Sticky -->
+<script defer src="{% static 'assets/js/plugins/resizer-sensor.js' %}"></script>
+<script defer src="{% static 'assets/js/plugins/sticky-sidebar.js' %}"></script>
 
+<script defer src="{% static 'assets/js/plugins/isotop.js' %}"></script>
+<script defer src="{% static 'assets/js/plugins/imagesloaded.pkgd.min.js' %}"></script>
 
+<script defer src="{% static 'assets/js/plugins/smoothscroll-varticle.js' %}"></script>
+<script defer src="{% static 'assets/js/vendor/gsap.js' %}"></script>
+<script defer src="{% static 'assets/js/plugins/scrolltiger.js' %}"></script>
+<script defer src="{% static 'assets/js/plugins/scrolltoplugin.js' %}"></script>
+<script defer src="{% static 'assets/js/plugins/splittext.js' %}"></script>
+<script defer src="{% static 'assets/js/plugins/smoothscroll.js' %}"></script>
 
-    <script defer src="{% static "assets/js/vendor/jquery.min.js" %}"></script>
-    <script defer src="{% static "assets/js/plugins/bootstrap.min.js" %}"></script>
-    <script defer src="{% static "assets/js/plugins/contact.form.js" %}"></script>
-    <script defer src="{% static "assets/js/vendor/waypoint.js" %}"></script>
-    <script defer src="{% static "assets/js/plugins/swiper.js" %}"></script>
+<!-- Title Opacity Scroll Magic -->
+<script defer src="{% static 'assets/js/plugins/scrollmagic.js' %}"></script>
+<script defer src="{% static 'assets/js/plugins/animate-scrollmagic.js' %}"></script>
 
+<script defer src="{% static 'assets/js/plugins/tilt.js' %}"></script>
+<script defer src="{% static 'assets/js/plugins/counterup.js' %}"></script>
 
-    <!-- for side bar sticky -->
-    <script defer src="{% static "assets/js/plugins/resizer-sensor.js" %}"></script>
-    <script defer src="{% static "assets/js/plugins/sticky-sidebar.js" %}"></script>
-    <!-- for side bar sticky end-->
+<script defer src="{% static 'assets/js/vendor/waw.js' %}"></script>
 
-    <script defer src="{% static "assets/js/plugins/isotop.js" %}"></script>
-    <script defer src="{% static "assets/js/plugins/imagesloaded.pkgd.min.js" %}"></script>
-
-    <script defer src="{% static "assets/js/plugins/smoothscroll-varticle.js" %}"></script>
-    <script defer src="{% static "assets/js/vendor/gsap.js" %}"></script>
-    <script defer src="{% static "assets/js/plugins/scrolltiger.js" %}"></script>
-    <script defer src="{% static "assets/js/plugins/scrolltoplugin.js" %}"></script>
-    <script defer src="{% static "assets/js/plugins/splittext.js" %}"></script>
-    <script defer src="{% static "assets/js/plugins/smoothscroll.js" %}"></script>
-
-    <!-- title opacity scroll magix -->
-    <script defer src="{% static "assets/js/plugins/scrollmagic.js" %}"></script>
-    <script defer src="{% static "assets/js/plugins/animate-scrollmagic.js" %}"></script>
-    <!-- title opacity scroll magic end -->
-
-
-
-    <script defer src="{% static "assets/js/plugins/tilt.js" %}"></script>
-    <script defer src="{% static "assets/js/plugins/counterup.js" %}"></script>
-
-    <script defer src="{% static "assets/js/vendor/waw.js" %}"></script>
-    <!-- custom javascripts -->
-    <script defer src="{% static "assets/js/main.js" %}"></script>
-    <!-- Scripts style two End -->
-
-</body>
-
-</html>
+<!-- Custom JavaScript -->
+<script defer src="{% static 'assets/js/main.js' %}"></script>

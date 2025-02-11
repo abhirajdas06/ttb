@@ -1,6 +1,8 @@
+from django.core.mail import send_mail
+from django.conf import settings
 from django.shortcuts import render, redirect
-from .forms import ContactForm
-
+from .forms import ContactForm  # Ensure your form has fields corresponding to the model
+from .models import ContactMessage  # Import the model
 # Create your views here.
 def index(request):
     return render(request, "home/index.html")
@@ -38,8 +40,24 @@ def contact_us(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            form.save()  # Save the form data to the database
-            return redirect('success')  # Redirect to a success page after submission
+            # Save the form data to the database as a new ContactMessage instance
+            contact_message = form.save()
+
+            # Send an email to info@thetechbuzz.in
+            send_mail(
+                'New Contact Us Submission',  # Subject
+                f'You have a new message from {contact_message.full_name}.\n\n'
+                f'Email: {contact_message.email}\n\n'
+                f'Interest: {contact_message.interest}\n\n'
+                f'Budget: {contact_message.budget}\n\n'
+                f'Message: {contact_message.message}',  # Body
+                settings.DEFAULT_FROM_EMAIL,  # From email
+                ['info@thetechbuzz.in'],  # Recipient email
+                fail_silently=False,
+            )
+
+            # Redirect to a success page after submission
+            return redirect('success')
     else:
         form = ContactForm()
 

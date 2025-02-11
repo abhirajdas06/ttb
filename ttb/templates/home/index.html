@@ -258,7 +258,7 @@
                                 It’s a collaborative, iterative approach designed to deliver customized 
                                 solutions that drive results and growth.
                             </p>
-                            <a href="#" class="learn-more-btn">Learn More<i
+                            <a href="{% url "service" %}" class="learn-more-btn">Learn More<i
                                     class="fa-solid fa-arrow-up-right"></i></a>
                         </div>
                     </div>
@@ -268,7 +268,7 @@
                         <div class="service-area-one-main-wrapper">
 
                             <div class="single-item-service-one">
-                                <a href="service-details.html">
+                                <a href="{% url "website_development" %}">
                                     <div class="rts-img-contaciner">
                                         <figure class="list-img">
                                             <img class="list-img" src="{% static "assets/images/product/15.jpg" %}" alt="Stream Shop">
@@ -294,7 +294,7 @@
                                 </a>
                             </div>
                             <div class="single-item-service-one">
-                                <a href="service-details.html">
+                                <a href="{% url "software_development" %}">
                                     <div class="rts-img-contaciner">
                                         <figure class="list-img">
                                             <img class="list-img" src="{% static "assets/images/product/60.jpg" %}" alt="Stream Shop">
@@ -318,7 +318,7 @@
                                 </a>
                             </div>
                             <div class="single-item-service-one">
-                                <a href="service-details.html">
+                                <a href="{% url "app_development" %}">
                                     <div class="rts-img-contaciner">
                                         <figure class="list-img">
                                             <img class="list-img" src="{% static "assets/images/product/61.jpg" %}" alt="Stream Shop">
@@ -343,7 +343,7 @@
                                 </a>
                             </div>
                             <div class="single-item-service-one">
-                                <a href="service-details.html">
+                                <a href="{% url "digital_marketing" %}">
                                     <div class="rts-img-contaciner">
                                         <figure class="list-img">
                                             <img class="list-img" src="{% static "assets/images/product/dm.jpg" %}" alt="Stream Shop">
@@ -368,7 +368,7 @@
                                 </a>
                             </div>
                             <div class="single-item-service-one">
-                                <a href="service-details.html">
+                                <a href="{% url "email_marketing" %}">
                                     <div class="rts-img-contaciner">
                                         <figure class="list-img">
                                             <img class="list-img" src="{% static "assets/images/product/63.jpg" %}" alt="Stream Shop">
@@ -394,7 +394,7 @@
                             </div>
 
                             <div class="single-item-service-one">
-                                <a href="service-details.html">
+                                <a href="{% url "whatsapp_marketing" %}">
                                     <div class="rts-img-contaciner">
                                         <figure class="list-img">
                                             <img class="list-img" src="{% static "assets/images/product/63.jpg" %}" alt="Stream Shop">
@@ -419,7 +419,7 @@
                             </div>
 
                             <div class="single-item-service-one">
-                                <a href="service-details.html">
+                                <a href="{% url "ivr_marketing" %}">
                                     <div class="rts-img-contaciner">
                                         <figure class="list-img">
                                             <img class="list-img" src="{% static "assets/images/product/63.jpg" %}" alt="Stream Shop">
@@ -786,7 +786,7 @@
 
 
         <!-- our trusted clienbts area start -->
-        <div class="trusted-clients-area-start rts-section-gap">
+        {% comment %} <div class="trusted-clients-area-start rts-section-gap">
             <div class="right-shape-testi">
                 <img src="{% static "assets/images/testimonials/03.png" %}" alt="testimonials">
             </div>
@@ -860,7 +860,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> {% endcomment %}
         <!-- our trusted clienbts area end -->
 
         {% comment %} <!-- blog area start -->
@@ -948,7 +948,7 @@
                                     </p>
                                 </div>
                                 <div class="button-area-right">
-                                    <a href="#" class="rts-btn btn-white">Get Quote <i
+                                    <a href="{% url "contact_us" %}" class="rts-btn btn-white">Get Quote <i
                                             class="fa-light fa-arrow-right"></i></a>
                                 </div>
                             </div>

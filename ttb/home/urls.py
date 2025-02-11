@@ -17,6 +17,9 @@ Including another URLconf
 # from django.contrib import admin
 from django.urls import path
 from . import views
+from django.contrib.sitemaps.views import sitemap
+from .sitemaps import StaticViewSitemap 
+
 urlpatterns = [
     path('', views.index, name="home"),
     path('about-us', views.about, name="about"),
@@ -30,4 +33,6 @@ urlpatterns = [
     path('services/ivr-marketing', views.ivr_marketing, name="ivr_marketing"),
     path('contact/', views.contact_us, name='contact_us'),
     path('success/', views.success_page, name='success'),
+    path('sitemap.xml', sitemap, {'sitemaps': {'static': StaticViewSitemap}}),  # Add this line for the sitemap
+
 ]

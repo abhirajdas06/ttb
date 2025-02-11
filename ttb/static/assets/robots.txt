@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /search?s
+Disallow: /checkout/
+
+Sitemap: https://thetechbuzz.in/sitemap_index.xml
+Sitemap: https://thetechbuzz.in/post-sitemap.xml

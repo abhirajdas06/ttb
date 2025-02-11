@@ -3,6 +3,9 @@ from django.conf import settings
 from django.shortcuts import render, redirect
 from .forms import ContactForm  # Ensure your form has fields corresponding to the model
 from .models import ContactMessage  # Import the model
+
+from django.contrib.sitemaps import Sitemap
+
 # Create your views here.
 def index(request):
     return render(request, "home/index.html")
@@ -65,3 +68,24 @@ def contact_us(request):
 
 def success_page(request):
     return render(request, 'contact/success.html')
+
+
+class StaticViewSitemap(Sitemap):
+    def items(self):
+        return [
+            'home', 
+            'about', 
+            'service', 
+            'digital_marketing', 
+            'website_development', 
+            'software_development', 
+            'app_development', 
+            'email_marketing', 
+            'whatsapp_marketing', 
+            'ivr_marketing', 
+            'contact_us', 
+            'success'
+        ]
+
+    def location(self, item):
+        return reverse(item)

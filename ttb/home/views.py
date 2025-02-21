@@ -48,14 +48,15 @@ def contact_us(request):
 
             # Send an email to info@thetechbuzz.in
             send_mail(
-                'New Contact Us Submission',  # Subject
+                'New Contact Us Submission',
                 f'You have a new message from {contact_message.full_name}.\n\n'
                 f'Email: {contact_message.email}\n\n'
+                f'Phone: {contact_message.phone}\n\n'  # Include the phone number
                 f'Interest: {contact_message.interest}\n\n'
                 f'Budget: {contact_message.budget}\n\n'
-                f'Message: {contact_message.message}',  # Body
-                settings.DEFAULT_FROM_EMAIL,  # From email
-                ['info@thetechbuzz.in'],  # Recipient email
+                f'Message: {contact_message.message}',
+                settings.DEFAULT_FROM_EMAIL,
+                ['info@thetechbuzz.in'],
                 fail_silently=False,
             )
 

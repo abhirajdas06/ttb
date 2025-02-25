@@ -3,7 +3,7 @@ from django.conf import settings
 from django.shortcuts import render, redirect
 from .forms import ContactForm  # Ensure your form has fields corresponding to the model
 from .models import ContactMessage  # Import the model
-
+from django.contrib import messages
 from django.contrib.sitemaps import Sitemap
 
 # Create your views here.
@@ -43,15 +43,15 @@ def contact_us(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            # Save the form data to the database as a new ContactMessage instance
+            # Save the form data to the database
             contact_message = form.save()
 
-            # Send an email to info@thetechbuzz.in
+            # Send an email notification
             send_mail(
                 'New Contact Us Submission',
                 f'You have a new message from {contact_message.full_name}.\n\n'
                 f'Email: {contact_message.email}\n\n'
-                f'Phone: {contact_message.phone}\n\n'  # Include the phone number
+                f'Phone: {contact_message.phone}\n\n'
                 f'Interest: {contact_message.interest}\n\n'
                 f'Budget: {contact_message.budget}\n\n'
                 f'Message: {contact_message.message}',
@@ -60,12 +60,17 @@ def contact_us(request):
                 fail_silently=False,
             )
 
-            # Redirect to a success page after submission
+            # Redirect to a success page or show a success message
+            messages.success(request, "Your message has been sent successfully!")
             return redirect('success')
+        else:
+            # If the form is invalid (including reCAPTCHA failure), show an error message
+            messages.error(request, "Please complete the reCAPTCHA.")
     else:
         form = ContactForm()
 
     return render(request, 'contact/contact_us.html', {'form': form})
+
 
 def success_page(request):
     return render(request, 'contact/success.html')

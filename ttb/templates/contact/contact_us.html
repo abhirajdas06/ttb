@@ -76,6 +76,8 @@
                             <label for="message">Message*</label>
                             <textarea id="message" name="message" cols="30" rows="10" placeholder="Let us know about your project" required></textarea>
                         </div>
+                        <div class="h-captcha" data-sitekey="d1a6a44a-170c-4ac0-9010-4a7230fe1bf8"></div>
+
                         <br>
                         <div style="text-align: center;">
                             <button type="Submit" class="btn btn-success" style="width: 250px;">Submit</button>
@@ -98,6 +100,7 @@
     </div>
 {% endif %}
 
+<script src="https://hcaptcha.com/1/api.js" async defer></script>
 
 
 {% endblock body%}

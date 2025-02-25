@@ -27,12 +27,19 @@ SECRET_KEY = 'django-insecure-yz#3_*0sc2p!5h)r^bh_wo4yf&7d$oa1vi!%uv@&^^zwu6rk0-
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+# settings.py
+
+HCAPTCHA_SITE_KEY = 'd1a6a44a-170c-4ac0-9010-4a7230fe1bf8'  # Use your site key here
+HCAPTCHA_SECRET_KEY = 'ES_dac4c80444d245b085dedf118357c220'  # Replace this with your actual secret key
+
+
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'django.contrib.sitemaps',
+    'hcaptcha',
 
     'django.contrib.admin',
     'django.contrib.auth',

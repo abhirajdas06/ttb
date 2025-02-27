@@ -29,17 +29,21 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 # settings.py
 
-HCAPTCHA_SITE_KEY = 'd1a6a44a-170c-4ac0-9010-4a7230fe1bf8'  # Use your site key here
-HCAPTCHA_SECRET_KEY = 'ES_dac4c80444d245b085dedf118357c220'  # Replace this with your actual secret key
+# HCAPTCHA_SITE_KEY = 'd1a6a44a-170c-4ac0-9010-4a7230fe1bf8'  # Use your site key here
+# HCAPTCHA_SECRET_KEY = 'ES_dac4c80444d245b085dedf118357c220'  # Replace this with your actual secret key
 
+RECAPTCHA_PUBLIC_KEY = '6LeyCeQqAAAAAEHdsrlMPbtIP5krVnEQ7sSrrq7T'
+RECAPTCHA_PRIVATE_KEY = '6LeyCeQqAAAAADOQ8vUfGUJEQ4SR7fs5dMGDmXdV'
 
+# RECAPTCHA_PUBLIC_KEY = 'MyRecaptchaKey123'
+# RECAPTCHA_PRIVATE_KEY = 'MyRecaptchaPrivateKey456'
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'django.contrib.sitemaps',
-    'hcaptcha',
+    'django_recaptcha',
 
     'django.contrib.admin',
     'django.contrib.auth',

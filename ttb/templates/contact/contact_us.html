@@ -76,7 +76,12 @@
                             <label for="message">Message*</label>
                             <textarea id="message" name="message" cols="30" rows="10" placeholder="Let us know about your project" required></textarea>
                         </div>
-                        <div class="h-captcha" data-sitekey="d1a6a44a-170c-4ac0-9010-4a7230fe1bf8"></div>
+
+
+                        <button class="g-recaptcha" 
+                        data-sitekey="reCAPTCHA_site_key" 
+                        data-callback='onSubmit' 
+                        data-action='submit'>Submit</button>
 
                         <br>
                         <div style="text-align: center;">
@@ -100,7 +105,11 @@
     </div>
 {% endif %}
 
-<script src="https://hcaptcha.com/1/api.js" async defer></script>
 
-
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+    function onSubmit(token) {
+      document.getElementById("demo-form").submit();
+    }
+  </script>
 {% endblock body%}

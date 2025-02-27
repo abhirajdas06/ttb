@@ -1,9 +1,9 @@
 from django import forms
 from .models import ContactMessage
-from hcaptcha.fields import hCaptchaField
+from django_recaptcha.fields import ReCaptchaField
 
 class ContactForm(forms.ModelForm):
-    captcha = hCaptchaField()
+    captcha = ReCaptchaField()
 
     class Meta:
         model = ContactMessage
